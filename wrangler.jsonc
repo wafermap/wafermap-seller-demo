@@ -1,0 +1,13 @@
+{
+  "name": "my-wafermap-seller",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-01",
+  // Only needed for the OpenAI-style model route (/v1/chat/completions). Remove it if you only sell /text-stats.
+  "ai": { "binding": "AI" },
+  // Serve it on your own domain, e.g. "routes": [{ "pattern": "api.example.com", "custom_domain": true }]
+  "vars": {
+    // The wallet(s) you sign in to wafermap.xyz/sell with. Served at /.well-known/wafermap-seller.json as your domain proof.
+    "SELLERS": "0xYourWalletAddress"
+  }
+  // After creating the listing, store its signing secret: npx wrangler secret put LISTING_SECRETS
+}
